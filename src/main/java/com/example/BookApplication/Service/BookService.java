@@ -9,9 +9,27 @@ import org.springframework.stereotype.Service;
 public class BookService {
     @Autowired
     BookRepository bookRepository;
-    public void addBook(Book book) {
-         Book save = bookRepository.save(book);
+
+    public Book addBook(Book book) {
+        return bookRepository.save(book);
 
     }
 
+    public Book getBookByName(String name) {
+        return bookRepository.findBookByTitle(name);
+
+    }
+
+    public Book updateBook(Book book) {
+        return bookRepository.save(book);
+
+    }
+
+    public void deleteBook(Integer id) {
+
+         bookRepository.deleteById(id);
+
+    }
 }
+
+
